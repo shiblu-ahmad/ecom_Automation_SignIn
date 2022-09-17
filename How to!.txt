@@ -1,0 +1,11 @@
+Create a github account
+Sign in github
+Create a repo
+Download github desktop
+Open Github desktop
+Integrate between github account (remote account) with your local repo
+Explore your local folder where you have integrated with your remote git repo
+Copy your local code (collection) and paste into Github repo location on your computer
+Add comments 
+Add Commit
+Push to origin
