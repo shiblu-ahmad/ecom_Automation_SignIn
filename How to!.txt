@@ -9,3 +9,7 @@ Copy your local code (collection) and paste into Github repo location on your co
 Add comments 
 Add Commit
 Push to origin
+Jenkins credentials:
+Jenkins user: sqe_vve
+Pass: squ_vve
+http://96.85.103.138:8080/
