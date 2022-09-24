@@ -7,6 +7,41 @@
 	},
 	"item": [
 		{
+			"name": "1-Sign-up URL https://staging-be-ecom.techserve4u.com/api/user/signup Copy",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "accept",
+						"value": "application/json"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"{{$randomEmail}}\",\n  \"name\": \"{{$randomFirstName}}\",\n  \"password\": \"{{$randomPassword}}\"\n}"
+				},
+				"url": {
+					"raw": "https://staging-be-ecom.techserve4u.com/api/user/signup",
+					"protocol": "https",
+					"host": [
+						"staging-be-ecom",
+						"techserve4u",
+						"com"
+					],
+					"path": [
+						"api",
+						"user",
+						"signup"
+					]
+				}
+			},
+			"response": []
+		},
+		{
 			"name": "Valid user is able to sign in",
 			"event": [
 				{
@@ -22,8 +57,8 @@
 							"    pm.response.to.have.status(200);\r",
 							"});\r",
 							"\r",
-							"pm.test(\"User sign in should be less than 1000 ms\", function () {\r",
-							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"pm.test(\"User sign in should be less than 100 ms\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(100);\r",
 							"});\r",
 							"\r",
 							"\r",
@@ -42,9 +77,9 @@
 							"    pm.response.to.have.header(\"Content-Type\");\r",
 							"});\r",
 							"\r",
-							"//pm.test(\"Body is correct\", function () {\r",
-							"  //  pm.response.to.have.body({\"capture_Token\"}});\r",
-							"//});\r",
+							"pm.test(\"Body is correct\", function () {\r",
+							"    pm.response.to.have.body(\"token\");\r",
+							"});\r",
 							"\r",
 							"\r",
 							"//Schema validation\r",
@@ -81,7 +116,6 @@
 							"        \"token\": \"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MzFjYmZiYzRhMTRjMGI3MDk1ODUyYTYiLCJyb2xlIjoidXNlciIsImVtYWlsIjoiZmFobWlkazEyMkBnbWFpbC5jb20iLCJpYXQiOjE2NjM0Mjk2NzksImV4cCI6MTY2MzUxNjA3OX0.wxkwIItFvTBVDAHPN4IekyDccDk6xo-U9EDbBOPTl94\"\r",
 							"    }]\r",
 							"};\r",
-							"\r",
 							"\r",
 							"pm.test('Schema is valid', function () {\r",
 							"    pm.expect(tv4.validate(jsonData, schema_Validation)).to.be.true;\r",
